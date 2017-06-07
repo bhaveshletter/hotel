@@ -32,17 +32,17 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: Hotel_development
+  database: Hotel_development_2
   pool: 5
   username: sonali
   password: 
 
 test:
   <<: *default
-  database: Hotel_test
+  database: Hotel_test_2
 
 production:
   <<: *default
-  database: Hotel_prod
+  database: Hotel_prod_2
 
 
