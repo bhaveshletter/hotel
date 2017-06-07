@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  discount: 1.5
+  final_price: 1.5
+  date: MyString
+  user_id: 1
+  room_id: 1
+
+two:
+  discount: 1.5
+  final_price: 1.5
+  date: MyString
+  user_id: 1
+  room_id: 1

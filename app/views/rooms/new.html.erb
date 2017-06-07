@@ -1,0 +1,62 @@
+<div class="container">
+    <%= form_for :room , url: rooms_path do |f| %>
+      <div class="form-group">
+        <label class="control-label col-sm-2">Room Type:</label>
+        <div class="col-sm-8">
+          <%= f.text_field :room_type, class: "form-control"%>
+        </div>
+      </div></br></br>
+     
+      <div class="form-group">
+        <label class="control-label col-sm-2">Bed Type:</label>
+        <div class="col-sm-8">
+          <%= f.text_field :bed_type, class: "form-control" %>
+        </div>  
+      </div></br></br>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2">Price:</label>
+        <div class="col-sm-8">
+          <%= f.text_field :price , class: "form-control"%>
+        </div>  
+      </div></br></br>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2">Room_no:</label>
+        <div class="col-sm-8">
+          <%= f.text_field :room_no, class: "form-control" %>
+        </div>  
+      </div></br></br>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2">Room Floor:</label>
+        <div class="col-sm-8">
+          <%= f.text_field :room_floor, class: "form-control" %>
+        </div>  
+      </div></br></br>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label><%= f.check_box :pool_facing, {}, true, false %>Pool Facing</label>
+            <label><%= f.check_box :gym, {}, true, false %>Gym</label>
+            <label><%= f.check_box :breakfast, {}, true, false %>Breakfast</label>
+            <label><%= f.check_box :pick_n_drop, {}, true, false %>Pick and Drop</label>
+          </div> 
+        </div>   
+      </div></br></br>
+
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.file_field "image"%>
+        </div>  
+      </div></br></br>
+      
+      <%= f.hidden_field :hotelapp_id, :value => params[:hotelapp_id] %>
+      <div class="form-group"> 
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit %>
+        </div>
+      </div>
+    <% end %>
+</div>

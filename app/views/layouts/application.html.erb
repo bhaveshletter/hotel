@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title>Hotel</title>
+	    <%= csrf_meta_tags %>
+	    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	    <link rel="stylesheet" href="/assets/reset.css" type="text/css" media="all">
+		<link rel="stylesheet" href="/assets/layout.css" type="text/css" media="all">
+		<link rel="stylesheet" href="/assets/style.css" type="text/css" media="all">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  	</head>
+    <body>
+    	<div class="body1">
+		  <div class="">
+		    <!-- header -->
+		    <header>
+		      <h1><a href="index.html" id="logo"></a></h1>
+		      <div class="wrapper">
+		        <ul id="icons">
+		          <% if user_signed_in? %>
+				    Signed in as <%= current_user.email %>
+				    	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+				    	</li>
+				  	<% else %>
+				  		<li> For Booking first you have to login</li>
+				    	<li>
+				    		<%= link_to "Sign up", new_user_registration_path %>
+				    	</li>
+				    	<li>
+				    		<%= link_to "sign in", new_user_session_path %>
+				    	</li>	
+				  	<% end %>
+		        </ul>
+		      </div>
+		    </header>
+		    <!-- / header -->
+		  </div>
+		</div>
+    	<%= yield %>
+  	</body>
+</html>
+
+<style type="text/css">
+	.body {
+	    height: 550px;
+	    width: 1000px;
+		background:url(../assets/Radisson-Blu.jpg) 0 0 no-repeat;
+	}
+</style>

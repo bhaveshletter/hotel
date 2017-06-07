@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room_type: MyString
+  bed_type: MyString
+  pool_facing: false
+  gym: false
+  breakfast: false
+  pick_n_drop: false
+  price: 1.5
+  hotelapp_id: 1
+  room_no: 1
+  room_floor: MyString
+  image: 
+
+two:
+  room_type: MyString
+  bed_type: MyString
+  pool_facing: false
+  gym: false
+  breakfast: false
+  pick_n_drop: false
+  price: 1.5
+  hotelapp_id: 1
+  room_no: 1
+  room_floor: MyString
+  image: 

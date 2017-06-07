@@ -1,0 +1,30 @@
+<div class="container">
+  <h2>Booking Information of <%= current_user.email%></h2>
+  <% @bookings.each do |booking|%>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Booking id</th>
+          <th>Start Date</th>
+          <th>End date </th>
+          <th>Number of days</th>
+          <th>Per day price </th>
+          <th>Total price </th>
+          <th>Room Type </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="info">
+          <td><%= booking.id%></td>
+          <td><%= booking.date%></td>
+          <td><%= booking.end_date%></td>
+          <td>july@example.com</td>
+          <td><%= booking.room.price%></td>
+          <td><%=booking.final_price%></td>
+          <td><%= booking.room.room_type%></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>  
+</div>
+

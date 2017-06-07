@@ -1,0 +1,81 @@
+<body class="">
+	<div class="container background-img">
+	  	<h2></h2>
+	  	<%= form_tag(room_type_rooms_path, :method=>'get' ,:class=>"form-horizontal") do %>
+
+        <div class="form-group">
+		      <label class="control-label col-sm-2" for="email">Check-in</label>
+		      <div class="col-sm-10">
+		           <%= text_field_tag :check_in ,nil,:placeholder=> "Check-in", :id=>"datepicker" %>
+		        </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="email">Check-Out</label>
+		      	<div class="col-sm-10">
+		            <%= text_field_tag :check_out ,nil,:placeholder=> "Check-out", :id=>"datepicker-1" %>
+		        </div>
+		    </div>
+
+		    <div class="form-group">
+		      <label class="control-label col-sm-2" for="email">Room Type</label>
+		      <div class="col-sm-10">
+		      	<%= select_tag :room_type, options_for_select([["all",'all'],["deluxe",'deluxe'],["luxury",'luxury'],["luxury suites",'luxury suites'],["presidential suites",'luxury suites']])%>
+		      </div>
+		    </div>
+
+		    <div class="form-group">        
+		      <div class="col-sm-offset-2 col-sm-10">
+		        <button type="submit" class="btn btn-default">Submit</button>
+		      </div>
+		    </div>	    
+
+	<% end %>
+	  
+	</div>
+
+	
+</body>	
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    	$('#datepicker').datepicker({
+        	dateFormat: 'dd-mm-yy',
+        	minDate: new Date(),
+        	maxDate: new Date() + "+6M",
+        	onSelect: function (date) {
+                var dt2 = $("#datepicker-1");
+                var startDate = $(this).datepicker('getDate');
+                var minDate = $(this).datepicker('getDate');
+                minDate.setDate(minDate.getDate() + 1);
+                dt2.datepicker('setDate', minDate);
+                startDate.setDate(startDate.getDate() + 30);
+                //sets dt2 maxDate to the last day of 30 days window
+                dt2.datepicker('option', 'maxDate', startDate);
+                dt2.datepicker('option', 'minDate', minDate);
+                // $(this).datepicker('option', 'minDate', minDate);
+            }
+
+    	});
+    	$('#datepicker-1').datepicker({
+        	dateFormat: 'dd-mm-yy',
+        	minDate: new Date(),
+        	maxDate: new Date() + "+6M",
+    	});
+	});
+</script>
+
+<style type="text/css">
+	.background-img {
+	    height: 550px;
+	    width: 1000px;
+		background:url(../assets/Radisson-Blu.jpg) 0 0 no-repeat;
+	}
+</style>

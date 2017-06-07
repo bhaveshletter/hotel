@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Hotel Information</h2>
+    <table class="table">
+        <thead>
+	      	<tr>
+	        	<th>Hotel name</th>
+	        	<th>City</th>
+	        	<th>Address</th>
+	        	<th>Country</th>
+	        	<th>zipcode</th>
+	        	<th>Contact </th>
+	        	<th>Add Room</th>
+	      	</tr>
+		</thead>
+		<% @hotels.each do | hotel| %>
+		    <tbody>   
+		      <tr class="info">
+		        <td><%= hotel.name%></td>
+		        <td><%= hotel.city%></td>
+		        <td><%= hotel.address%></td>
+		        <td><%= hotel.country%></td>
+		        <td><%= hotel.zipcode%></td>
+		        <td><%= hotel.contact%></td>
+	        	<td><a href="<%= new_room_path( :hotelapp_id => hotel.id)%>"><button type="button" class="btn btn-info">add</button></a></td>
+		      </tr>
+		    </tbody>
+	    <% end %>
+	</table>
+</div>    
